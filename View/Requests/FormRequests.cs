@@ -75,11 +75,14 @@ namespace View
 
         private void buttonSendRequest_Click(object sender, EventArgs e)
         {
-            var form = Container.Resolve<FormSendRequest>();
-            form.Id = Convert.ToInt32(dataGridViewRequests.SelectedRows[0].Cells[0].Value);
-            if (form.ShowDialog() == DialogResult.OK)
+            if (dataGridViewRequests.SelectedRows.Count == 1)
             {
-                LoadData();
+                var form = Container.Resolve<FormSendRequest>();
+                form.Id = Convert.ToInt32(dataGridViewRequests.SelectedRows[0].Cells[0].Value);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                }
             }
         }
 
