@@ -36,6 +36,8 @@ namespace View
             currentContainer.RegisterType<IRequestService, RequestService>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IReportService, ReportService>(new HierarchicalLifetimeManager());
 
+            currentContainer.RegisterType<ISerializeService, SerializeSevice>(new HierarchicalLifetimeManager());
+
             return currentContainer;
         }
     }

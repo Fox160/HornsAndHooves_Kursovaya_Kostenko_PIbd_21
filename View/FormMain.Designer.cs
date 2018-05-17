@@ -33,6 +33,7 @@
             this.buttonReports = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonRequests = new System.Windows.Forms.Button();
+            this.buttonBackup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonDishes
@@ -67,7 +68,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(71, 247);
+            this.buttonExit.Location = new System.Drawing.Point(71, 304);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(119, 32);
             this.buttonExit.TabIndex = 3;
@@ -85,11 +86,22 @@
             this.buttonRequests.UseVisualStyleBackColor = true;
             this.buttonRequests.Click += new System.EventHandler(this.buttonRequests_Click);
             // 
+            // buttonBackup
+            // 
+            this.buttonBackup.Location = new System.Drawing.Point(71, 249);
+            this.buttonBackup.Name = "buttonBackup";
+            this.buttonBackup.Size = new System.Drawing.Size(119, 32);
+            this.buttonBackup.TabIndex = 5;
+            this.buttonBackup.Text = "Бэкап";
+            this.buttonBackup.UseVisualStyleBackColor = true;
+            this.buttonBackup.Click += new System.EventHandler(this.buttonBackup_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(273, 315);
+            this.ClientSize = new System.Drawing.Size(273, 362);
+            this.Controls.Add(this.buttonBackup);
             this.Controls.Add(this.buttonRequests);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonReports);
@@ -108,6 +120,7 @@
         private System.Windows.Forms.Button buttonReports;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonRequests;
+        private System.Windows.Forms.Button buttonBackup;
     }
 }
 
