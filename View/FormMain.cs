@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Service.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +19,12 @@ namespace View
         [Dependency]
         public new IUnityContainer Container { get; set; }
 
-        public FormMain()
+        private readonly ISerializeService service;
+
+        public FormMain(ISerializeService service)
         {
             InitializeComponent();
+            this.service = service;
         }
 
         private void buttonDishes_Click(object sender, EventArgs e)
@@ -49,6 +54,27 @@ namespace View
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonBackup_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog { Filter = "Json files (*.json)|*.json|Text files (*.txt)|*.txt" };
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    StreamWriter writer = new StreamWriter(sfd.FileName);
+
+                    writer.WriteLine(service.GetData());
+                    writer.Dispose();
+
+                    MessageBox.Show("Бэкап БД проведен успешно", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

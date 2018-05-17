@@ -53,6 +53,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -73,10 +75,12 @@
     <Compile Include="Implementations\ProductService.cs" />
     <Compile Include="Implementations\ReportService.cs" />
     <Compile Include="Implementations\RequestService.cs" />
+    <Compile Include="Implementations\SerializeSevice.cs" />
     <Compile Include="Interfaces\IDishService.cs" />
     <Compile Include="Interfaces\IProductService.cs" />
     <Compile Include="Interfaces\IReportService.cs" />
     <Compile Include="Interfaces\IRequestService.cs" />
+    <Compile Include="Interfaces\ISerializeService.cs" />
     <Compile Include="Migrations\201805021118185_FirstMigration.cs" />
     <Compile Include="Migrations\201805021118185_FirstMigration.Designer.cs">
       <DependentUpon>201805021118185_FirstMigration.cs</DependentUpon>
